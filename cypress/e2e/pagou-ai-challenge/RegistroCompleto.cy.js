@@ -8,9 +8,13 @@ describe('Pagou.ai Challange - Tacio', () => {
 
     
     it('Fazendo registro completo com usuario e verificando pagina de Finalizar Cadastro', () => {
-        cy.RegistroNome('Tacio Zava')
-        cy.RegistroEmail('tacio@teste.com')
-        cy.RegistroCelular('21999999999')
+
+        let randomEmail = `mariotest${Cypress._.random(1000, 9999)}@example.com`;
+        let randomCelular = `2193333${Cypress._.random(1000, 9999)}`;
+
+        cy.RegistroNome('Mario Augusto')
+        cy.RegistroEmail(randomEmail)
+        cy.RegistroCelular(randomCelular)
         cy.RegistroSenha('Algumasenhaai@123459')
         cy.RegistrarSubmit()
 
