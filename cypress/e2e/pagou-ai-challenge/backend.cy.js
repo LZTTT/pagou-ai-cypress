@@ -2,7 +2,7 @@ describe('Pagou.ai Challange Backend - Tacio', () => {
     
     // No proximo teste iremos verificar se o que foi cadastrado pelo usuario foi enviado corretamente para o backend.
 
-    it('Checando se registro com sucesso', () => {
+    it('Checando informações enviadas no registro', () => {
 
         let nome = "Moises Araujo"
         let email = "pagouai@teste.com"
@@ -15,7 +15,7 @@ describe('Pagou.ai Challange Backend - Tacio', () => {
         
         cy.RegistroCompleto(nome, email, celular, password)
 
-        cy.intercept('/user').as('registroRequest')
+        cy.intercept('**/user').as('registroRequest')
 
         cy.wait('@registroRequest').then(interception => {
             expect(interception.request.body).include({
@@ -29,7 +29,7 @@ describe('Pagou.ai Challange Backend - Tacio', () => {
 
     // No proximo testes iremos verificar se o que esta sendo enviado no login esta coerente com o as informacoes que foram dadas no form.
 
-    it('Checando informacoes enviadas no Login', () => {
+    it.only('Checando informacoes enviadas no Login', () => {
 
         let email = "pagouai@teste.com"
         let password = "AlgumaSenhaai@1235937"
@@ -40,7 +40,9 @@ describe('Pagou.ai Challange Backend - Tacio', () => {
 
         cy.Login(email, password)
 
-        cy.intercept('/user/auth').as('authRequest')
+        cy.intercept('**/user/auth').as('authRequest')
+
+        cy.wait(1000)
 
         cy.wait('@authRequest').then(interception => {
             expect(interception.request.body).include({
