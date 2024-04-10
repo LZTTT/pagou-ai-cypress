@@ -44,3 +44,7 @@ Cypress.Commands.add('Login', ($EmailLogin, $SenhaLogin) => {
 
     cy.LoginSubmit()
 })
+
+Cypress.Commands.add('FinalizaCadastroCheck', () => {
+    cy.contains('Finalizar Cadastro').should('be.visible')
+})
