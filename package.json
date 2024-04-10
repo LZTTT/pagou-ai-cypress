@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "cypress": "^13.7.2"
+  },
+  "dependencies": {
+    "pg-promise": "^11.6.0"
   }
 }
