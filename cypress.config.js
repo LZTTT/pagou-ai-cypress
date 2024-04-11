@@ -24,7 +24,7 @@ module.exports = {
 
       on('task', {
         deleteEmailDatabase() {
-          const query = "DELETE FROM users WHERE email like 'pagouai@teste.com'";
+          const query = "DELETE FROM users *";
           return db.oneOrNone(query);
         },
       });
