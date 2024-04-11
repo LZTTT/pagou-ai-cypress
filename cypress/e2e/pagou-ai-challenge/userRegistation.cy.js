@@ -2,6 +2,9 @@ describe('Registro e verificação na DB', () => {
 
     it('Deve registrar e verificar se é foi salvo na DB', () => {
 
+      cy.clearCookies()
+      cy.task('deleteEmailDatabase')
+
       let randomEmail = `taciotest${Cypress._.random(1000, 9999)}@example.com`;
       let randomCelular = `2193333${Cypress._.random(1000, 9999)}`;
 

@@ -4,6 +4,8 @@ describe('Pagou.ai Challange Backend Registro - Tacio', () => {
 
     it('Checando informacoes enviadas no Login', () => {
 
+        cy.clearCookies()
+
         let email = "pagouai@teste.com"
         let password = "AlgumaSenhaai@1235937"
 

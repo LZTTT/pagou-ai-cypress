@@ -4,6 +4,7 @@ describe('Pagou.ai Challange Backend Registro - Tacio', () => {
 
     it('Checando informações enviadas no registro', () => {
 
+        cy.clearCookies()
         cy.task('deleteEmailDatabase')
 
         let nome = "Moises Araujo"
