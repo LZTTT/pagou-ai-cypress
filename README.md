@@ -1,5 +1,7 @@
 # Teste para vaga QA Pagou.ai
 
+- https://treasure-pizza-61e.notion.site/Testes-Automatizados-Cypress-4e867902e0044a7aa3c6b50239565966
+
 ## Requisitos
  - Node.js
  - npm 
